@@ -21,7 +21,7 @@ export default function Footer() {
               ASTRA
             </button>
             <p className="text-body max-w-xs">
-              A modern expression of hair, beauty and artistry in the heart of Toronto.
+              Hair, colour, makeup and beauty studio on St. Clair Avenue West, Toronto. Since 1992.
             </p>
           </div>
 
@@ -71,8 +71,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Astra Salon. All rights reserved.
           </p>
           <div className="flex gap-6">
-             <button className="text-small text-muted bg-transparent border-none cursor-pointer hover:text-text-primary transition-colors">Privacy</button>
-             <button className="text-small text-muted bg-transparent border-none cursor-pointer hover:text-text-primary transition-colors">Terms</button>
+             <a href="#privacy" className="text-small text-muted hover:text-text-primary transition-colors no-underline">Privacy</a>
+             <a href="#terms" className="text-small text-muted hover:text-text-primary transition-colors no-underline">Terms</a>
           </div>
         </div>
 
