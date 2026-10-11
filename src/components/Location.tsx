@@ -31,26 +31,34 @@ export default function Location() {
               </div>
               <div>
                 <h4 className="text-small text-text-primary mb-4 border-b border-border-light pb-2 inline-block">Contact</h4>
-                <p className="text-body mb-2">+1 (416) 920-8091</p>
-                <p className="text-body">hello@astrasalon.com</p>
+                <p className="text-body mb-2">
+                  <a href="tel:+14169208091" className="text-text-secondary hover:text-text-primary transition-colors no-underline">+1 (416) 920-8091</a>
+                </p>
+                <p className="text-body">
+                  <a href="mailto:hello@astrasalon.com" className="text-text-secondary hover:text-text-primary transition-colors no-underline">hello@astrasalon.com</a>
+                </p>
               </div>
               <div>
                 <h4 className="text-small text-text-primary mb-4 border-b border-border-light pb-2 inline-block">Hours</h4>
-                <p className="text-body mb-2">Mon - Fri: 9am — 7pm</p>
-                <p className="text-body mb-2">Sat: 10am — 5pm</p>
+                <p className="text-body mb-2">Mon - Fri: 9am to 7pm</p>
+                <p className="text-body mb-2">Sat: 10am to 5pm</p>
                 <p className="text-body text-muted">Sun: Closed</p>
               </div>
             </div>
           </motion.div>
 
-          {/* Right: Map/Image (40%) */}
+          {/* Right: Salon photo (40%) */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 1, delay: 0.3 }}
-            className="w-full lg:w-[40%] aspect-square bg-[#E8E5DF] flex items-center justify-center p-8 text-center"
+            className="w-full lg:w-[40%] aspect-square overflow-hidden"
           >
-             <p className="text-small text-muted tracking-widest">MAP INTEGRATION</p>
+            <img
+              src="/images/astra/salon-exterior.jpg"
+              alt="Astra Salon storefront at 1033 St Clair Ave W, Toronto"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
 
         </div>

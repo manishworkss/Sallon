@@ -30,8 +30,8 @@ export default function About() {
               </p>
               <p className="text-body">
                 What began as a neighbourhood salon on St. Clair Avenue West has grown into a
-                trusted destination for hair, beauty, and personal care — evolving with the times
-                while staying true to the craft.
+                trusted destination for hair, beauty, and personal care that has evolved with the
+                times while staying true to the craft.
               </p>
             </div>
           </motion.div>

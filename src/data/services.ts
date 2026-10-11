@@ -19,7 +19,7 @@ export const services: Service[] = [
   {
     id: 'styling',
     name: 'Styling',
-    description: 'From effortless waves to structured updos — styling for every occasion.',
+    description: 'From effortless waves to structured updos. Styling for every occasion.',
     category: 'hair',
     image: '/images/astra/salon-interior.jpg',
     note: 'Consultation recommended',

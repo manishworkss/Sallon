@@ -46,8 +46,8 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-display text-text-primary mb-8"
             >
-              Beauty,<br />
-              <span className="italic">Refined.</span>
+              Hair, Colour<br />
+              <span className="italic">&amp; Makeup Studio.</span>
             </motion.h1>
 
             <motion.p 
@@ -56,7 +56,7 @@ export default function Hero() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-body max-w-md mb-12"
             >
-              A modern expression of hair, beauty and artistry in the heart of Toronto.
+              Serving Toronto's St. Clair West neighbourhood since 1992. Cuts, colour, styling, bridal, skincare and more.
             </motion.p>
 
             <motion.div 

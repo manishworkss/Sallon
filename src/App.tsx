@@ -5,18 +5,37 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import Lookbook from './components/Lookbook';
 import About from './components/About';
-import AIStyleFinder from './components/AIStyleFinder';
 import Booking from './components/Booking';
 import Location from './components/Location';
 import Footer from './components/Footer';
-import AIConcierge from './components/AIConcierge';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import Terms from './components/Terms';
+
+type Page = 'home' | 'privacy' | 'terms';
+
+function getPageFromHash(): Page {
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'privacy') return 'privacy';
+  if (hash === 'terms') return 'terms';
+  return 'home';
+}
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState<Page>(getPageFromHash);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1200);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const onHashChange = () => {
+      setPage(getPageFromHash());
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
 
   return (
@@ -36,10 +55,10 @@ export default function App() {
             >
               ASTRA
             </motion.p>
-            <motion.div 
+            <motion.div
               className="w-12 h-[1px] bg-border-light overflow-hidden relative"
             >
-              <motion.div 
+              <motion.div
                 initial={{ x: '-100%' }}
                 animate={{ x: '100%' }}
                 transition={{ duration: 1, ease: 'easeInOut', repeat: Infinity }}
@@ -53,17 +72,27 @@ export default function App() {
       {!loading && (
         <>
           <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Services />
-            <Lookbook />
-            <AIStyleFinder />
-            <Booking />
-            <Location />
-          </main>
+          {page === 'home' && (
+            <main>
+              <Hero />
+              <About />
+              <Services />
+              <Lookbook />
+              <Booking />
+              <Location />
+            </main>
+          )}
+          {page === 'privacy' && (
+            <main>
+              <PrivacyPolicy />
+            </main>
+          )}
+          {page === 'terms' && (
+            <main>
+              <Terms />
+            </main>
+          )}
           <Footer />
-          <AIConcierge />
         </>
       )}
     </>
